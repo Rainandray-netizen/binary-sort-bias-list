@@ -16,9 +16,12 @@ body{
     align-items: center;
 }
 
-option{
+div{
     border: 2px solid black;
     height:350px;
     width:250px;
     margin:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
