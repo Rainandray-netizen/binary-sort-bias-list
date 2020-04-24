@@ -1,5 +1,3 @@
-console.log('Open your Iz')
-
 const selectedOption = document.getElementById('optionA')
 const sortedOption = document.getElementById('optionB')
 
@@ -13,24 +11,12 @@ sortedOption.addEventListener('click',()=>{
 
 //setting up initial variables
 const exampleArray = [
-    'George Michael',
-    'Gob',
-    'Michael',
-    'Lindsey',
-    'Buster',
-    'Maeby',
-    'Tobias',
-    'Lucille',
-    'George Sr.',
-    'Oscar',
-    'Steve Holt',
-    'Marta',
-    'Anne',
-    'Franklin',
-    'Barry Zuckercorn',
-    'Bob Loblaw',
-    'Lucille Two',
-    
+    //add all desired choices in here!
+    'Choice 1',
+    'Choice 2',
+    'Choice 3',
+    'Choice 4'
+
 ]
 const outputArray = []
 
