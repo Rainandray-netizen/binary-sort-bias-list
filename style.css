@@ -1,5 +1,5 @@
 body{
-    background-image:url('./images/save-ye-na.jpg');
+    background-image:url('./images/murica-food.jpg');
     background-size: cover;
     display:flex;
     justify-content: center;
@@ -25,3 +25,8 @@ div{
     justify-content: center;
     align-items: center;
 }
+
+/* #results{
+    display: none;
+} */
+

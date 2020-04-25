@@ -1,5 +1,6 @@
 const selectedOption = document.getElementById('optionA')
 const sortedOption = document.getElementById('optionB')
+const resultsList = document.getElementById('results')
 
 selectedOption.addEventListener('click',()=>{
     binaryInsertionSorter('higher')
@@ -12,11 +13,21 @@ sortedOption.addEventListener('click',()=>{
 //setting up initial variables
 const exampleArray = [
     //add all desired choices in here!
-    'Choice 1',
-    'Choice 2',
-    'Choice 3',
-    'Choice 4'
-
+    'KFC',
+    'Popeyes',
+    'Raising Canes',
+    'Chik Fil A',
+    'McDonalds',
+    'Burger King',
+    'Skyline Chili',
+    'Denny\'s',
+    'Smokes Poutine',
+    'Liberty Shwarma',
+    'My Roti Express',
+    'Nook',
+    'Culvers',
+    'Greggs',
+    'Max Burger'
 ]
 const outputArray = []
 
@@ -27,7 +38,7 @@ const randomIndexFromArray = (array) =>{
 
 let currentSelection
 
-// upper bound is 1 because the highest index it could be spliced at is 1, and the lowest is 0
+// upper bound is 1 because the highest index the initial selection could be spliced at is 1, and the lowest is 0
 let highestIndex = 1
 let lowestIndex = 0
 let comparatorIndex = 0
@@ -66,11 +77,11 @@ const binaryInsertionSorter = (decision) => {
     }
 
 
-    console.log('highest: ', highestIndex)
-    console.log('lowest: ',lowestIndex)
-    console.log('comparatorindex: ',comparatorIndex)
+    // console.log('highest: ', highestIndex)
+    // console.log('lowest: ',lowestIndex)
+    // console.log('comparatorindex: ',comparatorIndex)
 
-    //check if furhter sorting is needed, if not then splice into the array at the appropriate point
+    //check if further sorting is needed, if not then splice into the array at the appropriate point
     if(highestIndex===lowestIndex){
         outputArray.splice(highestIndex,0,currentSelection)
         highestIndex = outputArray.length
@@ -81,9 +92,14 @@ const binaryInsertionSorter = (decision) => {
             [currentSelection] = exampleArray.splice(randomIndexFromArray(exampleArray),1)
             sortedSelection = outputArray[comparatorIndex]
         }else{
+            //SORTING FINISHED
             console.log('SORTING COMPLETE: ',outputArray)
             selectedOption.style.display = 'none'
             sortedOption.style.display = 'none'
+
+            outputArray.map((item)=>{
+                resultsList.innerHTML += `<li>${item}</li>`
+            })
 
         }
     }else{
@@ -97,7 +113,5 @@ const binaryInsertionSorter = (decision) => {
 
     selectedOption.innerHTML = currentSelection
     sortedOption.innerHTML = sortedSelection
-
-    console.log(outputArray)
     return
 }
